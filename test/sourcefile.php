@@ -12,7 +12,8 @@
             echo "func1: This is for test.";
         }
         
-        public function func2($param1, $param2) {
+        public function func2($param1, $param2) 
+        {
             echo "func2: This is for test.";
         }
         
