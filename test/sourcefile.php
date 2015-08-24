@@ -15,6 +15,7 @@
         public function func2($param1, $param2) 
         {
             echo "func2: This is for test.";
+            
         }
         
         protected abstract function func3();
