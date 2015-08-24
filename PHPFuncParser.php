@@ -113,19 +113,19 @@ class PHPFuncParser
                     }
                     break;
                 case self::STATE_IN_CLASS:
-                    if ($this->should_change_in_class_to_meet_method($token)) {
-                        $this->change_in_class_to_meet_method($token);
-                    } else if ($this->should_change_in_class_to_init($token)) {
+                    if ($this->should_change_in_class_to_init($token)) {
                         $this->change_in_class_to_init($token);
+                    } else if ($this->should_change_in_class_to_meet_method($token)) {
+                        $this->change_in_class_to_meet_method($token);
                     } else {
                         $this->update_in_class_info($token);
                     }
                     break;
                 case self::STATE_MEET_METHOD:
-                    if ($this->should_change_meet_method_to_in_method($token)) {
-                        $this->change_meet_method_to_in_method($token);
-                    } else if ($this->should_change_meet_method_to_in_class($token)) {
+                    if ($this->should_change_meet_method_to_in_class($token)) {
                         $this->change_meet_method_to_in_class($token);
+                    } else if ($this->should_change_meet_method_to_in_method($token)) {
+                        $this->change_meet_method_to_in_method($token);
                     } else {
                         $this->update_meet_method_info($token);
                     }
