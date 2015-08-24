@@ -3,7 +3,11 @@
     
     $content = file_get_contents("sourcefile.php");
     
-    $parser = new PHPFuncParser($content);
-    $result = $parser->process();
-    
-    print_r($result);
+    try {
+        $parser = new PHPFuncParser($content);
+        $result = $parser->process();
+        print_r($result);
+    } catch(RuntimeException $e){
+        print($e->getMessage());
+        exit(1);
+    }
