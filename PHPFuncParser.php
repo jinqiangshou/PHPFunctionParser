@@ -320,7 +320,7 @@ class PHPFuncParser
         if (!$this->in_php || $this->state != self::STATE_MEET_METHOD || is_array($token)) {
             return false;
         }
-        if (is_string($token) && $token = "{" && $this->meet_to_in_func_method == 4) {
+        if (is_string($token) && $token == "{" && $this->meet_to_in_func_method == 4) {
             return true;
         }
         return false;
